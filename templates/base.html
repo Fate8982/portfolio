@@ -12,7 +12,7 @@
         <div class="logo">Fate</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -22,8 +22,106 @@
     {% block content %}{% endblock %}
 
     <footer>
+        <center>
         <p>© 2026 Fate | Built with Flask</p>
+        </center>
     </footer>
+
+
+    <script>
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+
+let w, h;
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+// ⭐ STAR CONFIG
+const STAR_COUNT = Math.floor(window.innerWidth * 0.15);
+const stars = [];
+let mouseX = 0, mouseY = 0;
+
+// Create stars
+for (let i = 0; i < STAR_COUNT; i++) {
+  stars.push({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 1.5 + 0.3,
+    vx: (Math.random() - 0.5) * 0.2,
+    vy: (Math.random() - 0.5) * 0.2,
+    alpha: Math.random()
+  });
+}
+
+// Shooting stars
+const shootingStars = [];
+
+function createShootingStar() {
+  shootingStars.push({
+    x: Math.random() * w,
+    y: Math.random() * h * 0.5,
+    vx: -6 - Math.random() * 4,
+    vy: 6 + Math.random() * 4,
+    life: 0
+  });
+}
+
+// Mouse parallax
+window.addEventListener("mousemove", e => {
+  mouseX = (e.clientX - w / 2) * 0.0005;
+  mouseY = (e.clientY - h / 2) * 0.0005;
+});
+
+function animate() {
+  ctx.clearRect(0, 0, w, h);
+
+  // ⭐ Draw stars
+  for (const s of stars) {
+    s.x += s.vx + mouseX * 20;
+    s.y += s.vy + mouseY * 20;
+
+    if (s.x < 0) s.x = w;
+    if (s.x > w) s.x = 0;
+    if (s.y < 0) s.y = h;
+    if (s.y > h) s.y = 0;
+
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${s.alpha})`;
+    ctx.shadowBlur = 8;
+    ctx.shadowColor = "white";
+    ctx.fill();
+  }
+
+  // ☄️ Shooting stars
+  for (let i = shootingStars.length - 1; i >= 0; i--) {
+    const sh = shootingStars[i];
+    sh.x += sh.vx;
+    sh.y += sh.vy;
+    sh.life++;
+
+    ctx.beginPath();
+    ctx.moveTo(sh.x, sh.y);
+    ctx.lineTo(sh.x + sh.vx * 4, sh.y + sh.vy * 4);
+    ctx.strokeStyle = "rgba(255,255,255,0.8)";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    if (sh.life > 30) shootingStars.splice(i, 1);
+  }
+
+  // Randomly spawn shooting stars
+  if (Math.random() < 0.005) createShootingStar();
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 
 </body>
 </html>

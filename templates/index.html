@@ -5,9 +5,25 @@
 <section id="home" class="hero">
     <div class="hero-content">
 
+        <div class="space-bg">
+            <canvas id="stars"></canvas>
+        </div>
+
+
+        <div class="starfield">
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+
+            <span class="shooting-star"></span>
+            <span class="shooting-star"></span>
+        </div>
+
+
         <div class="hero-text">
             <h4>Hello<span>.</span></h4>
-            <h1>I’m <span>Fate</span></h1>
+            <h1>I’m <span>Rahul Saggu</span></h1>
             <h2>Software Developer</h2>
 
             <!-- About Me (Hero) -->
@@ -20,7 +36,7 @@
 
             <div class="hero-buttons">
                 <a href="#projects" class="btn primary">Got a project?</a>
-                <a href="{{ url_for('static', filename='resume/Fate_Resume.pdf') }}" class="btn outline">
+                <a href="{{ url_for('static', filename='resume/Rahul_resume.docx') }}" class="btn outline">
                     My Resume
                 </a>
             </div>
@@ -36,56 +52,208 @@
 
 
 
-<section id="education" class="section">
-    <h1>Educational Details</h1>
-    <ul>
-        <li>BCA – XYZ College (2023–2026)</li>
-        <li>Specialization: Computer Science</li>
-    </ul>
-</section>
+<section id="education" class="section education-section">
+    <h2 class="section-title">Education</h2>
 
-<section id="skills" class="section">
-    <h1>Technical Skills</h1>
-    <div class="skills">
-        <span>Python</span>
-        <span>Flask</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>MySQL</span>
+    <div class="edu-grid">
+
+                <!-- 12TH GRADE CARD -->
+        <div class="edu-flip-container">
+            <div class="edu-flip-card">
+
+                <!-- FRONT -->
+                <div class="edu-face edu-front">
+                    <h3>12th Grade</h3>
+                    <p>Police DAV Public School, Jalandhar</p>
+                    <span>2022-2023</span>
+                    <small>Hover to see details</small>
+                </div>
+
+                <!-- BACK -->
+                <div class="edu-face edu-back">
+                    <h4>12th Grade Details</h4>
+                    <p><strong>Stream:</strong> Arts</p>
+                    <p><strong>Board:</strong> CBSE</p>
+
+                    <p class="subjects-title">Subjects</p>
+                    <p class="subjects">
+                        Legal Studies, Economics, Political Science,
+                        Music Instrumental, English
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- BCA CARD -->
+        <div class="edu-flip-container">
+            <div class="edu-flip-card">
+
+                <!-- FRONT -->
+                <div class="edu-face edu-front">
+                    <h3>BCA</h3>
+                    <p>Trinity College, Jalandhar</p>
+                    <span>2023 – 2026</span>
+                    <small>Hover to see details</small>
+                </div>
+
+                <!-- BACK -->
+                <div class="edu-face edu-back">
+                    <h4>BCA Details</h4>
+
+                    <p class="subjects-title">Core Subjects</p>
+                    <p class="subjects">
+                        C, C++, Java, Python, Computer Fundamentals,
+                        Digital Electronics, DBMS, Operating Systems, Applied Mathematics
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </section>
 
-<section id="projects" class="section">
-    <h1>Projects</h1>
 
-    <div class="project-card">
 
-        <img 
-            src="{{ url_for('static', filename='images/movie_project.png') }}"
-            alt="Movie Recommendation System"
-            class="project-img"
-        >
+<section id="skills" class="section skills-section">
+    <h2 class="section-title">Skills</h2>
 
-        <h3>Movie & Anime Recommendation System</h3>
-        <p>
-            Flask-based system with user login, database, chatbot, and recommendations.
-        </p>
-        <p><strong>Tech:</strong> Flask, MySQL, HTML, CSS</p>
+    <div class="skills-grid">
+
+        <!-- Programming -->
+        <div class="skills-card">
+            <h3>Programming</h3>
+            <div class="skills-list">
+                <span>Python</span>
+                <span>C</span>
+                <span>C++</span>
+                <span>Java</span>
+            </div>
+        </div>
+
+        <!-- Web -->
+        <div class="skills-card">
+            <h3>Web Development</h3>
+            <div class="skills-list">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Flask</span>
+            </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skills-card">
+            <h3>Databases</h3>
+            <div class="skills-list">
+                <span>MySQL</span>
+                <span>SQLite</span>
+            </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skills-card">
+            <h3>Tools & Platforms</h3>
+            <div class="skills-list">
+                <span>Git</span>
+                <span>GitHub</span>
+                <span>VS Code</span>
+            </div>
+        </div>
 
     </div>
 </section>
 
 
-<section id="contact" class="section">
-    <h1>Contact Information</h1>
-    <p>Email: fate@example.com</p>
-    <p>GitHub: github.com/fate</p>
-    <p>LinkedIn: linkedin.com/in/fate</p>
+<section id="projects" class="section projects-section">
+    <h2 class="section-title">Projects</h2>
 
-    <a href="{{ url_for('static', filename='resume/Fate_Resume.pdf') }}" download class="btn">
-        Download Resume
-    </a>
+    <div class="projects-grid">
+
+        <!-- FEATURED PROJECT : PLATFORMER GAME -->
+        <div class="project-card featured">
+            <div class="project-image">
+                <img src="{{ url_for('static', filename='images/platformer.png') }}"
+                     alt="Platformer Game">
+            </div>
+
+            <div class="project-content">
+                <h3>Platformer Game</h3>
+                <p>
+                    A 2D platformer game built using Python’s
+                    <strong>Arcade</strong> library. Includes
+                    player movement, physics, obstacles, and
+                    camera handling. Currently in early development.
+                </p>
+
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>Arcade</span>
+                    <span>Game Development</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="#" class="btn outline">Source Code</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOVIE RECOMMENDATION SYSTEM -->
+        <div class="project-card">
+            <div class="project-image">
+                <img src="{{ url_for('static', filename='images/movie_project.png') }}"
+                     alt="Movie Recommendation System">
+            </div>
+
+            <div class="project-content">
+                <h3>Movie Recommendation System</h3>
+                <p>
+                    A Flask-based web application that recommends
+                    movies and anime with user authentication,
+                    favorites, and a structured database.
+                </p>
+
+                <div class="project-tags">
+                    <span>Flask</span>
+                    <span>Python</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>SQLite</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="#" class="btn primary">Live</a>
+                    <a href="#" class="btn outline">Source Code</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section id="contact" class="section contact-section">
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact-cards">
+        <a href="mailto:rahulsaggu47@gmail.com" class="contact-card">
+            <span class="icon">📧</span>
+            <p>rahulsaggu47@gmail.com</p>
+        </a>
+
+        <a href="https://github.com/Fate8982" target="_blank" class="contact-card">
+            <span class="icon">💻</span>
+            <p>github.com/Fate8982</p>
+        </a>
+
+        <a href="https://www.linkedin.com/in/rahul-saggu-884890305/" target="_blank" class="contact-card">
+            <span class="icon">🔗</span>
+            <p>linkedin.com/in/rahul-saggu-884890305</p>
+        </a>
+    </div>
+</section>
 </section>
 
 {% endblock %}
