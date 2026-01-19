@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section id="home" class="hero">
+    <div class="hero-content">
+
+        <div class="hero-text">
+            <h4>Hello<span>.</span></h4>
+            <h1>I’m <span>Fate</span></h1>
+            <h2>Software Developer</h2>
+
+            <!-- About Me (Hero) -->
+            <p class="hero-about">
+                 A passionate fresher focused on building
+                 <span>clean</span>, <span>user-friendly</span> web applications
+                 using <span>Python</span> and <span>Flask</span>.
+            </p>
+
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary">Got a project?</a>
+                <a href="{{ url_for('static', filename='resume/Fate_Resume.pdf') }}" class="btn outline">
+                    My Resume
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="image-ring"></div>
+            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile">
+        </div>
+
+    </div>
+</section>
+
+
+
+<section id="education" class="section">
+    <h1>Educational Details</h1>
+    <ul>
+        <li>BCA – XYZ College (2023–2026)</li>
+        <li>Specialization: Computer Science</li>
+    </ul>
+</section>
+
+<section id="skills" class="section">
+    <h1>Technical Skills</h1>
+    <div class="skills">
+        <span>Python</span>
+        <span>Flask</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>MySQL</span>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <h1>Projects</h1>
+
+    <div class="project-card">
+
+        <img 
+            src="{{ url_for('static', filename='images/movie_project.png') }}"
+            alt="Movie Recommendation System"
+            class="project-img"
+        >
+
+        <h3>Movie & Anime Recommendation System</h3>
+        <p>
+            Flask-based system with user login, database, chatbot, and recommendations.
+        </p>
+        <p><strong>Tech:</strong> Flask, MySQL, HTML, CSS</p>
+
+    </div>
+</section>
+
+
+<section id="contact" class="section">
+    <h1>Contact Information</h1>
+    <p>Email: fate@example.com</p>
+    <p>GitHub: github.com/fate</p>
+    <p>LinkedIn: linkedin.com/in/fate</p>
+
+    <a href="{{ url_for('static', filename='resume/Fate_Resume.pdf') }}" download class="btn">
+        Download Resume
+    </a>
+</section>
+
+{% endblock %}

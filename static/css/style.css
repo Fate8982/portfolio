@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: #020617;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #e5e7eb;
+    text-decoration: none;
+}
+
+.section {
+    padding: 80px 50px;
+}
+
+.skills span {
+    background: #1e293b;
+    padding: 10px 15px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.project-card {
+    background: #020617;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #38bdf8;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s ease;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #38bdf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+}
+
+.project-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.profile-img,
+.project-img {
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover,
+.project-img:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: #0b1220;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #f97316;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at right, #1e293b, #020617);
+}
+
+.hero-content {
+    width: 100%;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text h4 {
+    font-size: 22px;
+    color: #f97316;
+}
+
+.hero-text h1 {
+    font-size: 52px;
+    margin: 10px 0;
+}
+
+.hero-text h1 span {
+    color: #f97316;
+}
+
+.hero-text h2 {
+    font-size: 36px;
+    color: #94a3b8;
+}
+
+/* ---------- BUTTONS ---------- */
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.primary {
+    background: #f97316;
+    color: black;
+}
+
+.outline {
+    border: 2px solid #f97316;
+    color: #f97316;
+}
+
+/* ---------- HERO IMAGE ---------- */
+.hero-image {
+    position: relative;
+    width: 300px;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.image-ring {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 8px solid #f97316;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+
+.hero-text,
+.hero-image {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.hero-text.show,
+.hero-image.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-about {
+    max-width: 520px;
+    margin-top: 18px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #cbd5e1;
+}
+
+.hero-about span {
+    color: #f97316;
+    font-weight: 500;
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-text,
+.hero-image {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.hero-text.show,
+.hero-image.show {
+    opacity: 1;
+    transform: translateY(0);
+}

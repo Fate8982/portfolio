@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fate | Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script defer src="{{ url_for('static', filename='js/animations.js') }}"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Fate</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <p>© 2026 Fate | Built with Flask</p>
+    </footer>
+
+</body>
+</html>
